@@ -1,0 +1,47 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: aqua;
+}
+
+#calculator {
+    width: 400px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#display {
+    height: 50px;
+    background-color: black;
+    
+}
+
+#top-display {
+    height: 50px;
+    background-color: black;
+}
+
+.current {
+    color: white;
+    font-size: 25px;
+}
+
+.output {
+    color: rgb(190, 190, 190);
+    font-size: 20px;
+}
+
+#currentEval {
+    color: white;
+}
+
+button {
+    outline: none;
+    height: 50px;
+}
+
+button:hover {
+    border: 1px solid white;
+}
