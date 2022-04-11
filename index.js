@@ -15,23 +15,20 @@ const App = () => {
     let lastChar = output[output.length - 1]
 
     const handleEval = () => {
-        console.log('Equals pressed!')
         setCurrent(eval(output))
         setOutput((eval(output)))
         setEval(eval(output))
     }
 
     const handleClick = (input) => {
-        console.log('input is: ' +input)
         //handles clear button
         if (input === 'clear') {
             setCurrent('0')
-            setOutput('0')
+            setOutput('')
             setEval('')
         }
         // handles input if it is a digit
         else if (regex2.test(input)) {
-            console.log('caught digit')
              //checks if current is displaying a non-digit and replaces it with a digit
             if (regex5.test(current)){
                 setCurrent(input)
@@ -45,18 +42,13 @@ const App = () => {
             }
         //handles decimal input
         } else if (input === '.') {
-            console.log('current is:'+current)
-            console.log('output is:' +output)
             if (current === '0') {
-                console.log('current is 0')
                 setCurrent(current + input)
                 setOutput(current + input)
             } else if (regex4.test(current)) {
-                console.log('caught .')
                 // setCurrent(current)
                 // setOutput(output)
             } else {
-                console.log('. added')
                 setCurrent(current + input)
                 setOutput(output + input)
             }
@@ -87,7 +79,6 @@ const App = () => {
                 setOutput(output + input)
             }
         } else {
-            console.log('missed all cases')
             setCurrent(current)
         }
     }
