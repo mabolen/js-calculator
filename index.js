@@ -15,13 +15,14 @@ const App = () => {
     let lastChar = output[output.length - 1]
 
     const handleEval = () => {
+        console.log('Equals pressed!')
         setCurrent(eval(output))
         setOutput((eval(output)))
         setEval(eval(output))
     }
 
     const handleClick = (input) => {
-        console.log(input)
+        console.log('input is: ' +input)
         //handles clear button
         if (input === 'clear') {
             setCurrent('0')
@@ -30,6 +31,7 @@ const App = () => {
         }
         // handles input if it is a digit
         else if (regex2.test(input)) {
+            console.log('caught digit')
              //checks if current is displaying a non-digit and replaces it with a digit
             if (regex5.test(current)){
                 setCurrent(input)
@@ -61,6 +63,7 @@ const App = () => {
         // handles input if it is a non-digit, replaces current with operator
         } else if (regex.test(input)) {
             setCurrent(input)
+            
             if (input === '-') {
                 if (!regex6.test(output)) {
                     setOutput(output + input)
@@ -84,6 +87,7 @@ const App = () => {
                 setOutput(output + input)
             }
         } else {
+            console.log('missed all cases')
             setCurrent(current)
         }
     }
