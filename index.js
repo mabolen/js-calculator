@@ -2,7 +2,7 @@
 const App = () => {
 
     const [current, setCurrent] = React.useState('0')
-    const [output, setOutput] = React.useState('0')
+    const [output, setOutput] = React.useState('')
     const [currentEval, setEval] = React.useState('')
 
     const regex = new RegExp(/\D/g)
